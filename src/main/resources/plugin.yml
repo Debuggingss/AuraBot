@@ -1,0 +1,9 @@
+name: AuraBot
+version: '${project.version}'
+main: dev.debuggings.aurabot.AuraBot
+authors: [ Debuggings ]
+description: Clone of Hypixel's old watchdog aurabot.
+commands:
+  aurabot:
+    description: AuraBot command.
+    usage: /aurabot <name>
