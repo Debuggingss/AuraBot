@@ -72,6 +72,13 @@ class AuraBotCommand : CommandExecutor {
         object : BukkitRunnable() {
 
             override fun run() {
+                if (AuraBotHandler.aurabots[target] == null) {
+                    NPCUtils.sendRemovePacket(npc, recipients)
+
+                    cancel()
+                    return
+                }
+
                 if (index >= locations.size) {
                     if (rounds >= 3) {
                         sender.sendMessage("§aTarget hit the bot ${AuraBotHandler.aurabots[target]?.hits} times.")
