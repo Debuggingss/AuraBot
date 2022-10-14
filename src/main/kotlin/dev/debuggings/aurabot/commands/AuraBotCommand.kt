@@ -45,7 +45,7 @@ class AuraBotCommand : CommandExecutor {
             return true
         }
 
-        val locations = MathUtils.getCircle(2.5, 20, Point(0.0, 1.0, 0.0))
+        val locations = MathUtils.getCircle(2.5, 20)
         val name = "§c${Utils.getRandomName()}".take(16)
         val equipment = Utils.getRandomEquipment()
         val recipients = arrayListOf(target, sender)
@@ -107,7 +107,7 @@ class AuraBotCommand : CommandExecutor {
 
                 val loc = locations[index]
 
-                NPCUtils.sendMovePacket(npc, recipients, target.location.add(loc.x, loc.y, loc.z))
+                NPCUtils.sendMovePacket(npc, recipients, target.location.add(loc.x, loc.y + 1, loc.z))
                 NPCUtils.sendRotationPacket(
                     npc,
                     recipients,

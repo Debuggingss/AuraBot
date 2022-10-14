@@ -29,7 +29,7 @@ class AuraBotHandler : Listener {
 
         val auraBotData = aurabots[damager] ?: return
 
-        if (auraBotData.target != damager || auraBotData.npc.id != entityId) return
+        if (auraBotData.npc.id != entityId) return
 
         auraBotData.hits += 1
 
